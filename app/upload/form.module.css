@@ -68,9 +68,25 @@
   .backLink:hover {
     text-decoration: underline;
   }
-
-  .numberInput {
-    
+  
+  .tourInfo {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .subTitle {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .completionMessage {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .completionMessage p {
+    margin-bottom: 1rem;
   }
   
   
