@@ -51,7 +51,7 @@ export default function KINSBFUploadForm() {
         </div>
         <button type="submit" className={styles.submitButton}>Upload Package</button>
       </form>
-      <Link href="/upload" className={styles.backLink}>Back to Package Selection</Link>
+      <Link href="/upload/menu" className={styles.backLink}>Back to Package Selection</Link>
     </div>
   )
 }
