@@ -2,24 +2,7 @@
 
 import { useState } from 'react'
 import styles from './od.module.css'
-
-interface Question {
-    question: string;
-    answer: string;
-    comment: string;
-}
-  
-interface Tour {
-    questions: Question[];
-}
-
-interface Package {
-  id: string;
-  title: string;
-  description: string;
-  tourAmount: number,
-  tours: Tour[];
-}
+import { Package, Question, Tour } from './page'
 
 const mockPackages: Package[] = [
     {
@@ -83,34 +66,40 @@ const mockPackages: Package[] = [
       }
 ]
 
-export default function PackageList() {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [packages, setPackages] = useState(mockPackages)
-
-
-  // TODO: implement search logic on backend
-  const filteredPackages = packages.filter(pkg =>
-    pkg.title.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-
-  return (
-    <div className={styles.packageList}>
-      <h2 className={styles.packageListTitle}>Available Packages</h2>
-      <input
-        type="text"
-        placeholder="Search packages..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className={styles.searchInput}
-      />
-      <ul className={styles.packageItems}>
-        {filteredPackages.map(pkg => (
-          <li key={pkg.id} className={styles.packageItem}>
-            {pkg.title}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
+interface PackageListProps {
+    onSelectPackage: (pkg: Package) => void;
+  }
+  
+  export default function PackageList({ onSelectPackage }: PackageListProps) {
+    const [searchTerm, setSearchTerm] = useState('')
+    const [packages, setPackages] = useState(mockPackages)
+    
+    // TODO: package search on backend side
+    const filteredPackages = packages.filter(pkg =>
+      pkg.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  
+    return (
+      <div className={styles.packageList}>
+        <h2 className={styles.packageListTitle}>Available Packages</h2>
+        <input
+          type="text"
+          placeholder="Search packages..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className={styles.searchInput}
+        />
+        <ul className={styles.packageItems}>
+          {filteredPackages.map(pkg => (
+            <li 
+              key={pkg.id} 
+              className={styles.packageItem}
+              onClick={() => onSelectPackage(pkg)}
+            >
+              {pkg.title}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }

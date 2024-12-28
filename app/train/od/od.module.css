@@ -16,6 +16,11 @@
     margin-bottom: 1rem;
   }
   
+  .noSelection {
+    color: var(--text-color);
+    font-style: italic;
+  }
+  
   .packageList {
     width: 300px;
     background-color: var(--primary-color);
@@ -58,6 +63,36 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
   
+  .packageDetails {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-color);
+  }
+  
+  .packageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .packageDescription {
+    margin-bottom: 1rem;
+  }
+  
+  .playButton {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .playButton:hover {
+    background-color: #27ae60;
+  }
+  
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
@@ -71,6 +106,4 @@
     .packageList {
       width: 100%;
     }
-  }
-  
-  
+  }  
