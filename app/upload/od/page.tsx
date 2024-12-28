@@ -29,23 +29,23 @@ export default function ODUploadForm() {
   const handleQuestionSubmit = (question: Question) => {
     setTours(prevTours => {
       const newTours = [...prevTours];
-      newTours[currentTour - 1].questions.push(question);
+      if (newTours[currentTour - 1].questions.length < 12) {
+        newTours[currentTour - 1].questions.push(question);
+      }
       return newTours;
     });
-
+  
     if (currentQuestion < 12) {
       setCurrentQuestion(prevQuestion => prevQuestion + 1);
     } else if (currentTour < tourAmount) {
       setCurrentTour(prevTour => prevTour + 1);
       setCurrentQuestion(1);
-      setTours(prevTours => [...prevTours, { questions: [] }]);
     } else {
       setIsInputComplete(true);
     }
   };
 
   const handleFinalSubmit = () => {
-    // Here you would typically handle the form submission to your backend
     console.log('Submitting OD package:', { title, description, tourAmount, tours })
     // Reset the form after submission
     setTitle('')
