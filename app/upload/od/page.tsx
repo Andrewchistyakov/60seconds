@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from '../form.module.css'
 import QuestionInput from './QuestionInput'
@@ -26,15 +26,35 @@ export default function ODUploadForm() {
 
   const totalQuestions = tourAmount * 12
 
+  useEffect(() => {
+    setTours(prevTours => {
+      const newTours = [...prevTours];
+      while (newTours.length < tourAmount) {
+        newTours.push({ questions: [] });
+      }
+      return newTours.slice(0, tourAmount);
+    });
+  }, [tourAmount]);
+
   const handleQuestionSubmit = (question: Question) => {
     setTours(prevTours => {
       const newTours = [...prevTours];
-      if (newTours[currentTour - 1].questions.length < 12) {
-        newTours[currentTour - 1].questions.push(question);
+      const currentTourQuestions = newTours[currentTour - 1].questions;
+      
+      // Check if the question already exists in the current tour
+      const questionExists = currentTourQuestions.some(
+        q => q.question === question.question && q.answer === question.answer
+      );
+
+      // Only add the question if it doesn't exist and the tour has less than 12 questions
+      if (!questionExists && currentTourQuestions.length < 12) {
+        currentTourQuestions.push(question);
       }
+
       return newTours;
     });
-  
+
+    // Move to the next question or tour
     if (currentQuestion < 12) {
       setCurrentQuestion(prevQuestion => prevQuestion + 1);
     } else if (currentTour < tourAmount) {
@@ -46,7 +66,15 @@ export default function ODUploadForm() {
   };
 
   const handleFinalSubmit = () => {
-    console.log('Submitting OD package:', { title, description, tourAmount, tours })
+    // Ensure all tours have exactly 12 questions before submission
+    const finalTours = tours.map(tour => ({
+      ...tour,
+      questions: tour.questions.slice(0, 12)
+    }));
+
+    // Here you would typically handle the form submission to your backend
+    console.log('Submitting OD package:', { title, description, tourAmount, tours: finalTours })
+    
     // Reset the form after submission
     setTitle('')
     setDescription('')
@@ -90,13 +118,6 @@ export default function ODUploadForm() {
             onChange={(e) => {
               const value = Math.max(1, Math.min(10, parseInt(e.target.value) || 1))
               setTourAmount(value)
-              setTours(prevTours => {
-                const newTours = [...prevTours]
-                while (newTours.length < value) {
-                  newTours.push({ questions: [] })
-                }
-                return newTours.slice(0, value)
-              })
             }}
             className={styles.input}
             min="1"
