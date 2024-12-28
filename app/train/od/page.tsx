@@ -1,10 +1,14 @@
-import ODTraining from '../../components/ODTraining'
+import PackageList from './PackageList'
+import styles from './od.module.css'
 
 export default function ODTrainingPage() {
   return (
-    <div className="max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Main Discipline (OD) Training</h1>
-      <ODTraining />
+    <div className={styles.container}>
+      <div className={styles.mainContent}>
+        <h1 className={styles.title}>OD Training</h1>
+        {/* Main training area will be implemented here */}
+      </div>
+      <PackageList />
     </div>
   )
 }

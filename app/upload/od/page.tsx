@@ -72,8 +72,14 @@ export default function ODUploadForm() {
       questions: tour.questions.slice(0, 12)
     }));
 
+    const finalPackage = { 
+                        title: title,
+                        description: description,
+                        tourAmount: tourAmount,
+                        tours: finalTours }
+
     // Here you would typically handle the form submission to your backend
-    console.log('Submitting OD package:', { title, description, tourAmount, tours: finalTours })
+    console.log('Submitting OD package:', finalPackage)
     
     // Reset the form after submission
     setTitle('')
