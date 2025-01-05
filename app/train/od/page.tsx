@@ -19,6 +19,7 @@ export interface Package {
   id: string;
   title: string;
   description: string;
+  authors: string;
   tourAmount: number,
   tours: Tour[];
 }

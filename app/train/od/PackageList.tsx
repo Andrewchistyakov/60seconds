@@ -8,7 +8,8 @@ const mockPackages: Package[] = [
     {
         "id": "001",
         "title": "DiliCup 1",
-        "description": "Explore the rich history and culture of ancient civilizations.",
+        "description": "пакет хороший играйте все",
+        "authors": "боберт росик, данька гаврилов",
         "tourAmount": 3,
         "tours": [
           {
@@ -31,7 +32,8 @@ const mockPackages: Package[] = [
       {
         "id": "002",
         "title": "Dilicup 2",
-        "description": "A thrilling journey through the Amazon rainforest, filled with wildlife and natural wonders.",
+        "description": "пакет хуйня не играйте",
+        "authors": "боберт росик, данька гаврилов",
         "tourAmount": 2,
         "tours": [
           {
