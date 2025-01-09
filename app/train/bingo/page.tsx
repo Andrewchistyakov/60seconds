@@ -1,11 +1,30 @@
-import BingoTraining from '../../components/BingoTraining'
+'use client'
+
+import { useState } from 'react'
+import PackageList from './PackageList'
+import BingoDetails from './Bingodetails'
+import styles from './bingo.module.css'
+
+export interface BingoPackage {
+  id: string;
+  name: string;
+  description: string;
+}
 
 export default function BingoTrainingPage() {
+  const [selectedPackage, setSelectedPackage] = useState<BingoPackage | null>(null)
+
   return (
-    <div className="max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Bingo Training</h1>
-      <BingoTraining />
+    <div className={styles.container}>
+      <div className={styles.mainContent}>
+        <h1 className={styles.title}>Bingo Training</h1>
+        {selectedPackage ? (
+          <BingoDetails package={selectedPackage} />
+        ) : (
+          <p className={styles.noSelection}>Select a package to start training</p>
+        )}
+      </div>
+      <PackageList onSelectPackage={setSelectedPackage} />
     </div>
   )
 }
-
