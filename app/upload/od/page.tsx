@@ -147,7 +147,7 @@ export default function ODUploadForm() {
           <button onClick={handleFinalSubmit} className={styles.submitButton}>Submit Package</button>
         </div>
       )}
-      <Link href="/packages/upload" className={styles.backLink}>Back to Package Selection</Link>
+      <Link href="/upload/menu" className={styles.backLink}>Back to Package Selection</Link>
     </div>
   )
 }

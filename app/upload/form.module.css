@@ -45,9 +45,9 @@
   
   .submitButton {
     padding: 0.5rem;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     color: var(--text-color);
-    border: none;
+    border-color: var(--primary-color);
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
