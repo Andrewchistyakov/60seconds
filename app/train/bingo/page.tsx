@@ -8,6 +8,7 @@ import styles from './bingo.module.css'
 export interface BingoPackage {
   id: string;
   name: string;
+  author: string;
   description: string;
 }
 

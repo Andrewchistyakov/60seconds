@@ -19,6 +19,9 @@ export default function RootLayout({
         <header className={styles.header}>
           <h1>CHGK-trainer</h1>
           <div className={styles.headerButtons}>
+            <Link href="/" className={styles.headerButton}>
+              Go to Menu
+            </Link>
             <Link href="/auth" className={styles.headerButton}>
               Sign In
             </Link>

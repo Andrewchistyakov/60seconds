@@ -77,13 +77,15 @@ interface PackageListProps {
     const [packages, setPackages] = useState(mockPackages)
     
     // TODO: package search on backend side
-    const filteredPackages = packages.filter(pkg =>
-      pkg.title.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+    const handleSearch = () => {
+      // This function will be implemented to trigger the backend search
+      console.log('Searching for:', searchTerm)
+    }
   
     return (
       <div className={styles.packageList}>
-        <h2 className={styles.packageListTitle}>Available Packages</h2>
+      <h2 className={styles.packageListTitle}>Available Packages</h2>
+      <div className={styles.searchContainer}>
         <input
           type="text"
           placeholder="Search packages..."
@@ -91,17 +93,21 @@ interface PackageListProps {
           onChange={(e) => setSearchTerm(e.target.value)}
           className={styles.searchInput}
         />
-        <ul className={styles.packageItems}>
-          {filteredPackages.map(pkg => (
-            <li 
-              key={pkg.id} 
-              className={styles.packageItem}
-              onClick={() => onSelectPackage(pkg)}
-            >
-              {pkg.title}
-            </li>
-          ))}
-        </ul>
+        <button onClick={handleSearch} className={styles.searchButton}>
+          Search
+        </button>
       </div>
+      <ul className={styles.packageItems}>
+        {mockPackages.map(pkg => (
+          <li 
+            key={pkg.id} 
+            className={styles.packageItem}
+            onClick={() => onSelectPackage(pkg)}
+          >
+            {pkg.title}
+          </li>
+        ))}
+      </ul>
+    </div>
     )
   }

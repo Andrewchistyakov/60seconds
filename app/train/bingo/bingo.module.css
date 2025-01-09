@@ -37,19 +37,40 @@
     font-weight: 500;
   }
   
+  .searchContainer {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: stretch;
+  }
+  
   .searchInput {
     width: calc(100% - 0.5rem);
     padding: 0.75rem;
-    margin-bottom: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     background-color: var(--background-color);
     color: var(--text-color);
+    flex-grow: 1;
   }
   
   .searchInput:focus {
     outline: none;
     border-color: var(--text-color);
+  }
+  
+  .searchButton {
+    padding: 0 1rem;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .searchButton:hover {
+    background-color: var(--hover-color);
   }
   
   .packageItems {
@@ -118,4 +139,6 @@
     .packageList {
       width: 100%;
     }
-}  
+  }
+  
+  
