@@ -3,13 +3,14 @@
 import { useState } from 'react'
 import styles from './bingo.module.css'
 import { BingoPackage } from './page'
+import { BingoQuestion } from './page'
 
 const mockPackages: BingoPackage[] = [
-  { id: '1', name: 'история XX века',author: "andrush4",  description: 'чтобы знашка по совку от зубов отлетала' },
-  { id: '2', name: 'исскуство США', author: "andrush4", description: 'чтобы знать что нибудь кроме банок супа уорхола' },
-  { id: '3', name: 'страны африки', author: "andrush4", description: 'чтобы быть как даня гаврилов' },
-  { id: '4', name: 'литература XXI века в россии', author: "andrush4", description: 'мне бы пригодилось а то хз че тут писать' },
-  { id: '5', name: 'команды НХЛ', author: "andrush4", description: 'чтобы тимпопа выносить' },
+  { id: '1', name: 'история XX века',author: "andrush4",  description: 'чтобы знашка по совку от зубов отлетала', questions: [{fact: 'никита катити', description: 'главная надежда 2025'}] },
+  { id: '2', name: 'исскуство США', author: "andrush4", description: 'чтобы знать что нибудь кроме банок супа уорхола', questions: [{fact: 'никита катити', description: 'главная надежда 2025'}] },
+  { id: '3', name: 'страны африки', author: "andrush4", description: 'чтобы быть как даня гаврилов', questions: [{fact: 'никита катити', description: 'главная надежда 2025'}] },
+  { id: '4', name: 'литература XXI века в россии', author: "andrush4", description: 'мне бы пригодилось а то хз че тут писать', questions: [{fact: 'никита катити', description: 'главная надежда 2025'}] },
+  { id: '5', name: 'команды НХЛ', author: "andrush4", description: 'чтобы тимпопа выносить', questions: [{fact: 'никита катити', description: 'главная надежда 2025'}] },
 ]
 
 interface PackageListProps {

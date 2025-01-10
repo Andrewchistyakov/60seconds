@@ -5,11 +5,17 @@ import PackageList from './PackageList'
 import BingoDetails from './Bingodetails'
 import styles from './bingo.module.css'
 
+export interface BingoQuestion {
+  fact: string;
+  description: string;
+  comment?: string;
+}
 export interface BingoPackage {
   id: string;
   name: string;
   author: string;
   description: string;
+  questions: BingoQuestion[];
 }
 
 export default function BingoTrainingPage() {
