@@ -110,7 +110,7 @@ export default function BINGOUploadForm() {
       </div>
 
       <button onClick={handleFinish} className={styles.finishButton}>Finish and Upload Package</button>
-      <Link href="/packages/upload" className={styles.backLink}>Back to Package Selection</Link>
+      <Link href="/upload/menu" className={styles.backLink}>Back to Package Selection</Link>
     </div>
   )
 }

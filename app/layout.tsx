@@ -16,14 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className={styles.header}>
+        <header className={`${styles.header} bg-[#481E14] text-white`}>
           <h1>CHGK-trainer</h1>
           <div className={styles.headerButtons}>
             <Link href="/" className={styles.headerButton}>
-              Go to Menu
+              <span className={styles.headerButtonText}>Main Menu</span>
             </Link>
             <Link href="/auth" className={styles.headerButton}>
-              Sign In
+              Login / Register
             </Link>
             <Link href="/upload/menu" className={styles.headerButton}>
               Upload Question Package

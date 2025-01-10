@@ -13,10 +13,6 @@ export default function Home() {
           <h2>Own Game (SI)</h2>
           <p>Practice your knowledge in various categories with increasing difficulty.</p>
         </Link>
-        <Link href="/train/kinsb" className={styles.disciplineBox}>
-          <h2>Team Speed Game (KINSbF)</h2>
-          <p>Improve your reaction time and teamwork in this fast-paced format.</p>
-        </Link>
         <Link href="/train/bingo" className={styles.disciplineBox}>
           <h2>Bingo Training</h2>
           <p>Enhance your fact recall abilities with this quick-fire training mode.</p>

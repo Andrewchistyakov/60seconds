@@ -2,10 +2,9 @@ import Link from 'next/link'
 import styles from './upload.module.css'
 
 const packageTypes = [
-  { id: 'si', name: 'Own Game (SI)' },
-  { id: 'od', name: 'Main Discipline (OD)' },
-  { id: 'bingo', name: 'Bingo' },
-  { id: 'kinsbf', name: 'Team Speed Game (KINSbF)' },
+  { id: 'od', name: 'Main Discipline (OD)', description: 'Upload OD package' },
+  { id: 'si', name: 'Own Game (SI)', description: 'Upload SI package' },
+  { id: 'bingo', name: 'Bingo', description: 'Upload Bingo package' },
 ]
 
 export default function UploadPage() {
@@ -17,7 +16,7 @@ export default function UploadPage() {
         {packageTypes.map((type) => (
           <Link href={`/upload/${type.id}`} key={type.id} className={styles.packageTypeCard}>
             <h2>{type.name}</h2>
-            <p>Upload {type.id} package</p>
+            <p>{type.description}</p>
           </Link>
         ))}
       </div>
