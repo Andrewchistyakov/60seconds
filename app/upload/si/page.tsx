@@ -11,6 +11,7 @@ export default function KINSBFUploadForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    // TODO: make backend submit
     // Here you would typically handle the form submission
     console.log('Submitting KINSBF package:', { title, description, questions })
   }
