@@ -6,16 +6,16 @@ export default function Home() {
     <div className={styles.home}>
       <div className={styles.grid}>
         <Link href="/train/od" className={styles.disciplineBox}>
-          <h2>Main Discipline (OD)</h2>
-          <p>Train your skills in the primary "What? Where? When?" format.</p>
+          <h2>Основная дисциплина</h2>
+          <p>Медленные вопросики</p>
         </Link>
         <Link href="/train/si" className={styles.disciplineBox}>
-          <h2>Own Game (SI)</h2>
-          <p>Practice your knowledge in various categories with increasing difficulty.</p>
+          <h2>Своя игра</h2>
+          <p>Быстрые вопросики</p>
         </Link>
         <Link href="/train/bingo" className={styles.disciplineBox}>
-          <h2>Bingo Training</h2>
-          <p>Enhance your fact recall abilities with this quick-fire training mode.</p>
+          <h2>БИНГО</h2>
+          <p>Знашка мастхэв</p>
         </Link>
       </div>
     </div>

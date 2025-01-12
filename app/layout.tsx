@@ -17,17 +17,19 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className={`${styles.header} bg-[#481E14] text-white`}>
-          <h1>CHGK-trainer</h1>
-          <div className={styles.headerButtons}>
-            <Link href="/" className={styles.headerButton}>
-              <span className={styles.headerButtonText}>Main Menu</span>
-            </Link>
-            <Link href="/auth" className={styles.headerButton}>
-              Login / Register
-            </Link>
-            <Link href="/upload/menu" className={styles.headerButton}>
-              Upload Question Package
-            </Link>
+        <div className={styles.headerLeft}>
+            <h1>CHGK-trainer</h1>
+            <div className={styles.searchContainer}>
+              <input
+                type="text"
+                placeholder="найти игрока..."
+                className={styles.searchInput}
+                aria-label="Search for users"
+              />
+              <button className={styles.searchButton} aria-label="Search">
+                Искать
+              </button>
+            </div>
           </div>
         </header>
         <main className={styles.main}>
