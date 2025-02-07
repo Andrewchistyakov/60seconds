@@ -1,0 +1,244 @@
+.container {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  padding: 2rem;
+  background-color: var(--background-color);
+  gap: 2rem;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.title {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.noSelection {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.packageList {
+  width: 300px;
+  background-color: var(--surface-color);
+  padding: 1.5rem 1.5rem 1.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.packageListTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+
+.searchButton {
+  padding: 0.75rem 1rem;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.searchButton:hover {
+  background-color: var(--hover-color);
+}
+
+.packageItems {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.packageItem {
+  width: calc(100% - 0.5rem);
+  padding: 0.75rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.packageItem:hover {
+  background-color: var(--hover-color);
+}
+
+.packageDetails {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.packageTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.packageDescription {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.playButton {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.playButton:hover {
+  background-color: var(--hover-color);
+}
+
+.trainingContainer {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.trainingTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.questionContainer {
+  margin-bottom: 1.5rem;
+}
+
+.questionText {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.answerText {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.showButton,
+.knownButton,
+.unknownButton {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.showButton {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+}
+
+.knownButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.unknownButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.answerButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.progressInfo {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.finishButton {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.finishButton:hover {
+  background-color: var(--hover-color);
+}
+
+.finishedContainer {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.finishedTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.finishedText {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .packageList {
+    width: 100%;
+  }
+}

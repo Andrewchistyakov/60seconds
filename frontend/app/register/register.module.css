@@ -1,0 +1,6 @@
+.registerPage h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+

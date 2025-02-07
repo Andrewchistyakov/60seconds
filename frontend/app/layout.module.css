@@ -1,0 +1,122 @@
+.header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 200px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+
+.searchButton {
+  padding: 0.5rem;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: var(--hover-color);
+}
+
+.headerButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.headerButton {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headerButton:hover {
+  background-color: var(--hover-color);
+}
+
+.headerButtonText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .headerButtonText {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .headerLeft {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .headerButtons {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.main {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+
