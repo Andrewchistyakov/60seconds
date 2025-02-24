@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import Header from './components/Header'
 import './globals.css'
 import styles from './layout.module.css'
 
@@ -16,22 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className={`${styles.header} bg-[#481E14] text-white`}>
-        <div className={styles.headerLeft}>
-            <h1>CHGK-trainer</h1>
-            <div className={styles.searchContainer}>
-              <input
-                type="text"
-                placeholder="найти игрока..."
-                className={styles.searchInput}
-                aria-label="Search for users"
-              />
-              <button className={styles.searchButton} aria-label="Search">
-                Искать
-              </button>
-            </div>
-          </div>
-        </header>
+        <Header />
         <main className={styles.main}>
           {children}
         </main>
@@ -39,4 +24,6 @@ export default function RootLayout({
     </html>
   )
 }
+
+
 
