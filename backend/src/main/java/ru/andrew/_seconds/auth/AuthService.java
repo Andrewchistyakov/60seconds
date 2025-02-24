@@ -19,7 +19,7 @@ public class AuthService {
         this.tokenService = tokenService;
     }
 
-    public ResponseEntity<?> registerUser() {
+    public ResponseEntity<?> registerUser(String username, String password) {
         // validate and pass / restrict user (!check token!)
     }
 
