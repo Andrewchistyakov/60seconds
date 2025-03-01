@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import styles from '../layout.module.css'
+import { useState } from "react";
+import Link from "next/link";
+import styles from "../layout.module.css";
 
 export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleLogin = () => {
-    setIsLoggedIn(!isLoggedIn)
-  }
+    setIsLoggedIn(!isLoggedIn);
+  };
 
   return (
     <header className={`${styles.header} bg-[#481E14] text-white`}>
@@ -22,8 +22,7 @@ export default function Header() {
             className={styles.searchInput}
             aria-label="Search for users"
           />
-          <button className={styles.searchButton} aria-label="Search">
-          </button>
+          <button className={styles.searchButton} aria-label="Search"></button>
         </div>
       </div>
       <div className={styles.headerButtons}>
@@ -35,7 +34,11 @@ export default function Header() {
             <span className={styles.headerButtonText}>My Account</span>
           </Link>
         ) : (
-          <Link href="/auth" className={styles.headerButton} onClick={toggleLogin}>
+          <Link
+            href="/auth"
+            className={styles.headerButton}
+            onClick={toggleLogin}
+          >
             Login / Register
           </Link>
         )}
@@ -44,6 +47,5 @@ export default function Header() {
         </Link>
       </div>
     </header>
-  )
+  );
 }
-
